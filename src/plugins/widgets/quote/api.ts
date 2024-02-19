@@ -51,7 +51,10 @@ async function getQuoteOfTheDay(category?: string) {
 
 // Get bible verse of the day
 async function getBibleVerse() {
-  const res = await fetch("https://quotes.rest/bible/vod.json");
+  const headers = {
+    "Authorization": `Bearer ${THEYSAIDSO_API_KEY}`
+  };
+  const res = await fetch("https://quotes.rest/bible/vod.json", { headers });
 
   const body = await res.json();
 
